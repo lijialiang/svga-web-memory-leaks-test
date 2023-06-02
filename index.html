@@ -1,0 +1,26 @@
+<style>
+  html {
+    background-color: #000;
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+
+<canvas id="canvas"></canvas>
+
+<script src="https://unpkg.com/svga/dist/index.min.js"></script>
+
+<script>
+  const canvas = document.querySelector('#canvas');
+  ;(async () => {
+    const { Parser, Player } = window.SVGA
+    const parser = new Parser()
+    const svga = await parser.load('angel.svga')
+    const player = new Player(canvas)
+    await player.mount(svga)
+    player.start()
+  })()
+</script>

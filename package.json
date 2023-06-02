@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start-server": "live-server ./ --port=8080",
+    "memlab-test": "memlab run --scenario ./test.js",
+    "test": "yarn start-server & yarn memlab-test"
+  },
+  "dependencies": {
+    "live-server": "1.2.1",
+    "memlab": "^1.1.39"
+  }
+}
